@@ -200,6 +200,158 @@
         {% endfor %}
       </tbody>
     </table>
+    <h2>Z kort</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns9 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows9 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>Z lang</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns10 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows10 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>ZW kort</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns11 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows11 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>ZW lang</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns12 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows12 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>W kort</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns13 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows13 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>W lang</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns14 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows14 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>NW kort</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns15 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows15 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>NW lang</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for column in columns16 %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows16 %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <script>
       function calculateTable(tableIndex) {
         var inputNumber = document.getElementById('inputNumber').value;
@@ -229,14 +381,22 @@
       }
     
       function addNumber() {
-        calculateTable(1); // Call the function for the first table (N kort)
-        calculateTable(2); // Call the function for the second table (N lang)
-        calculateTable(3); // Call the function for the second table (NO kort)
-        calculateTable(4); // Call the function for the second table (NO lang)
-        calculateTable(5); // Call the function for the first table (O kort)
-        calculateTable(6); // Call the function for the second table (O lang)
-        calculateTable(7); // Call the function for the second table (ZO kort)
-        calculateTable(8); // Call the function for the second table (ZO lang)
+        calculateTable(1); // Call the function for the table (N kort)
+        calculateTable(2); // Call the function for the table (N lang)
+        calculateTable(3); // Call the function for the table (NO kort)
+        calculateTable(4); // Call the function for the table (NO lang)
+        calculateTable(5); // Call the function for the table (O kort)
+        calculateTable(6); // Call the function for the table (O lang)
+        calculateTable(7); // Call the function for the table (ZO kort)
+        calculateTable(8); // Call the function for the table (ZO lang)
+        calculateTable(9); // Call the function for the table (Z kort)
+        calculateTable(10); // Call the function for the table (Z lang)
+        calculateTable(11); // Call the function for the table (ZW kort)
+        calculateTable(12); // Call the function for the table (ZW lang)
+        calculateTable(13); // Call the function for the table (W kort)
+        calculateTable(14); // Call the function for the table (W lang)
+        calculateTable(15); // Call the function for the table (NW kort)
+        calculateTable(16); // Call the function for the table (NW lang)
       }
     </script>
     

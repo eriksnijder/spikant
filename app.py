@@ -27,7 +27,7 @@ def index():
         ],
         'columns5': ['O kort', '60s', '48b', '47b', '48b', 'Finish'],
         'rows5': [
-            ['COG', 342,81,267,40,265],
+            ['COG', 342,81,267,87,265],
             ['TWA', 0, 0, 0, 0, 0] # Empty for calculation
         ],
         'columns6': ['O lang', '60s', '46b', '45b', '46b', '45b', '46b', 'Finish'],
@@ -67,7 +67,7 @@ def index():
         ],
         'columns13': ['W kort', '60s', '48b', '47b', '48b', 'Finish'],
         'rows13': [
-            ['COG', 342,81,267,40,265],
+            ['COG', 342,81,267,87,265],
             ['TWA', 0, 0, 0, 0, 0] # Empty for calculation
         ],
         'columns14': ['W lang', '60s', '46b', '45b', '46b', '45b', '46b', 'Finish'],

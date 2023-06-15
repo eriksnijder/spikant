@@ -1,404 +1,427 @@
 <!doctype html>
 <html>
-  <head>
-    <title>WAC spi-hulp</title>
-    <style>
-      body {
+
+<head>
+  <title>WAC spi-hulp</title>
+  <style>
+    body {
       background-image: url('/static/images/1302472.jpg');
       background-attachment: fixed;
       font-family: Verdana;
-      }
-      
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
+    }
 
-      th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-      }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-      thead {
-        background-color: #999999; /* Set the background color for the table header */
-        opacity: 0.85;
-      }
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
 
-      tbody tr:nth-child(1) {
-        background-color: #e4e4e4; /* Set the background color for Row 1 */
-        opacity: 0.85;
-      }
+    thead {
+      background-color: #999999;
+      /* Set the background color for the table header */
+      opacity: 0.85;
+    }
 
-      tbody tr:nth-child(2) {
-        background-color: #bcbcbc; /* Set the background color for Row 2 */
-        opacity: 0.85;
-      }
+    tbody tr:nth-child(1) {
+      background-color: #e4e4e4;
+      /* Set the background color for Row 1 */
+      opacity: 0.85;
+    }
 
-      .red-cell {
+    tbody tr:nth-child(2) {
+      background-color: #bcbcbc;
+      /* Set the background color for Row 2 */
+      opacity: 0.85;
+    }
+
+    .red-cell {
       background-color: red;
-      }
+    }
 
-      .green-cell {
+    .green-cell {
       background-color: #02fe02;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Windrichting</h2>
-    <input type="number" id="inputNumber">
-    <button onclick="addNumber()">windrichting in graden</button>
-    <h2>N kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+    }
+
+    .blue-cell {
+      background-color: #02aefe;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Windrichting</h2>
+  <input type="number" id="inputNumber">
+  <button onclick="addNumber()">windrichting in graden</button>
+  <h2>N kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>N lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns2 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows2 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>NO kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns3 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows3 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>N lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns2 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>NO lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns4 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows4 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows2 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>O kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns5 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows5 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>NO kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns3 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>O lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns6 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows6 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows3 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>ZO kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns7 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows7 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>NO lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns4 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>ZO lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns8 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows8 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows4 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>Z kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns9 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows9 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>O kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns5 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>Z lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns10 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows10 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows5 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>ZW kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns11 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows11 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>O lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns6 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>ZW lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns12 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows12 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows6 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>W kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns13 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows13 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>ZO kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns7 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>W lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns14 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows14 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows7 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>NW kort</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns15 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows15 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>ZO lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns8 %}
+        <th>{{ column }}</th>
         {% endfor %}
-      </tbody>
-    </table>
-    <h2>NW lang</h2>
-    <table>
-      <thead>
-        <tr>
-          {% for column in columns16 %}
-            <th>{{ column }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in rows16 %}
-          <tr>
-            {% for cell in row %}
-              <td>{{ cell }}</td>
-            {% endfor %}
-          </tr>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows8 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
         {% endfor %}
-      </tbody>
-    </table>
-    <script>
-      function calculateTable(tableIndex) {
-        var inputNumber = document.getElementById('inputNumber').value;
-        var row2 = document.querySelectorAll('table:nth-of-type(' + tableIndex + ') tbody tr')[0]; // Select the first row of the specified table
-        var row3 = document.querySelectorAll('table:nth-of-type(' + tableIndex + ') tbody tr')[1]; // Select the second row of the specified table
-        var cells2 = row2.getElementsByTagName('td');
-        var cells3 = row3.getElementsByTagName('td');
-        
-        for (var i = 1; i < cells2.length; i++) {
-          var cellValue = parseInt(cells2[i].innerText);
-          if (!isNaN(cellValue)) {
-            var result = 360 - parseFloat(cellValue) + parseFloat(inputNumber);
-            cells3[i].innerText = result;
-    
-            cells3[i].classList.remove('green-cell');
-            cells3[i].classList.remove('red-cell');
-    
-            if (result >= 181 && result <= 260) {
-              cells3[i].classList.add('green-cell');
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>Z kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns9 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows9 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>Z lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns10 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows10 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>ZW kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns11 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows11 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>ZW lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns12 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows12 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>W kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns13 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows13 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>W lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns14 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows14 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>NW kort</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns15 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows15 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h2>NW lang</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for column in columns16 %}
+        <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows16 %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <script>
+    function calculateTable(tableIndex) {
+      var inputNumber = document.getElementById('inputNumber').value;
+      var row2 = document.querySelectorAll('table:nth-of-type(' + tableIndex + ') tbody tr')[0]; // Select the first row of the specified table
+      var row3 = document.querySelectorAll('table:nth-of-type(' + tableIndex + ') tbody tr')[1]; // Select the second row of the specified table
+      var cells2 = row2.getElementsByTagName('td');
+      var cells3 = row3.getElementsByTagName('td');
+
+      for (var i = 1; i < cells2.length; i++) {
+        var cellValue = parseInt(cells2[i].innerText);
+        if (!isNaN(cellValue)) {
+          var result = 360 - parseFloat(cellValue) + parseFloat(inputNumber);
+          if (result > 360) {
+              result = inputNumber - cellValue;
             }
-    
-            if (result >= 100 && result <= 180) {
-              cells3[i].classList.add('red-cell');
-            }
+          cells3[i].innerText = result;
+
+          cells3[i].classList.remove('green-cell');
+          cells3[i].classList.remove('red-cell');
+          cells3[i].classList.remove('blue-cell');
+
+          if (result >= 181 && result <= 260) {
+            cells3[i].classList.add('green-cell');
+          }
+
+          if (result >= 100 && result <= 180) {
+            cells3[i].classList.add('red-cell');
+          }
+
+          if (result <= 40) {
+            cells3[i].classList.add('blue-cell');
+          }
+
+          if (result >= 320) {
+            cells3[i].classList.add('blue-cell');
           }
         }
       }
-    
-      function addNumber() {
-        calculateTable(1); // Call the function for the table (N kort)
-        calculateTable(2); // Call the function for the table (N lang)
-        calculateTable(3); // Call the function for the table (NO kort)
-        calculateTable(4); // Call the function for the table (NO lang)
-        calculateTable(5); // Call the function for the table (O kort)
-        calculateTable(6); // Call the function for the table (O lang)
-        calculateTable(7); // Call the function for the table (ZO kort)
-        calculateTable(8); // Call the function for the table (ZO lang)
-        calculateTable(9); // Call the function for the table (Z kort)
-        calculateTable(10); // Call the function for the table (Z lang)
-        calculateTable(11); // Call the function for the table (ZW kort)
-        calculateTable(12); // Call the function for the table (ZW lang)
-        calculateTable(13); // Call the function for the table (W kort)
-        calculateTable(14); // Call the function for the table (W lang)
-        calculateTable(15); // Call the function for the table (NW kort)
-        calculateTable(16); // Call the function for the table (NW lang)
-      }
-    </script>
-    
-  </body>
+    }
+
+    function addNumber() {
+      calculateTable(1); // Call the function for the table (N kort)
+      calculateTable(2); // Call the function for the table (N lang)
+      calculateTable(3); // Call the function for the table (NO kort)
+      calculateTable(4); // Call the function for the table (NO lang)
+      calculateTable(5); // Call the function for the table (O kort)
+      calculateTable(6); // Call the function for the table (O lang)
+      calculateTable(7); // Call the function for the table (ZO kort)
+      calculateTable(8); // Call the function for the table (ZO lang)
+      calculateTable(9); // Call the function for the table (Z kort)
+      calculateTable(10); // Call the function for the table (Z lang)
+      calculateTable(11); // Call the function for the table (ZW kort)
+      calculateTable(12); // Call the function for the table (ZW lang)
+      calculateTable(13); // Call the function for the table (W kort)
+      calculateTable(14); // Call the function for the table (W lang)
+      calculateTable(15); // Call the function for the table (NW kort)
+      calculateTable(16); // Call the function for the table (NW lang)
+    }
+  </script>
+
+</body>
+
 </html>
